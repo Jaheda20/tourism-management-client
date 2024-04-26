@@ -3,6 +3,8 @@ import { FaApple } from "react-icons/fa6";
 import { FaFacebookSquare } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { FcCallback } from "react-icons/fc";
+import { AiTwotoneMail } from "react-icons/ai";
 
 
 const Footer = () => {
@@ -13,6 +15,17 @@ const Footer = () => {
                     <div className="gap-2 flex flex-col mr-20">
                         <p className="text-3xl font-bold text-orange-500">Explore<span className="md:text-4xl text-blue-500">Xpert</span> </p>
                         <p className="w-72">Check and fix your holiday destination with ExploreXpert</p>
+                        <div className="mt-8">
+                            <h2 className="mb-3 font-bold">Contact info</h2>
+                            <p className="flex items-center gap-2">
+                            <FcCallback size={20}/>
+                                <span className="text-sm">077-196 3343</span>
+                            </p>
+                            <p className="flex items-center mt-3 gap-2">
+                            <AiTwotoneMail size={20} color="blue"/>
+                                <span className="text-sm">explorxpert@explorexpert.se</span>
+                            </p>
+                        </div>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-5 md:mt-0">
