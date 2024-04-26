@@ -11,6 +11,7 @@ import Lottie from "lottie-react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialSignIn from "./SocialSignIn";
+import Swal from "sweetalert2";
 
 
 const SignIn = () => {
@@ -29,6 +30,13 @@ const SignIn = () => {
         signInUser(email, password)
             .then(result => {
                 console.log(result.user)
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Successfully signed in",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             })
             .catch(error => {
                 console.error(error)

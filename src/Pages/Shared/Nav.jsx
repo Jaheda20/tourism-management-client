@@ -1,7 +1,12 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/images/logo.jpg"
+import useAuth from "../../Hooks/useAuth";
+import defaultImage from "../../../public/images/user.png";
 
 const Nav = () => {
+
+    const { user, signOutUser } = useAuth();
+
     const navLinks =
         <>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/" >Home</NavLink></li>
@@ -12,7 +17,7 @@ const Nav = () => {
 
 
     return (
-        
+
         <div className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
@@ -31,22 +36,43 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/signin" className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
-                    <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
-                    <span className="relative text-black">Signin</span>
-                </Link>
-                <Link to="/signup" className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
-                    <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
-                    <span className="relative text-black">Signup</span>
-                </Link>
+                {
+                    user ?
+                        <div>
+                            <details className="dropdown">
+                                <summary className="m-1 btn">My Page</summary>
+                                <ul className="p-2 shadow menu dropdown-content z-[1] bg-sky-100 rounded-xl w-52">
+                                    <li>
+                                        <div>
+                                            <img className="w-12 rounded-full" src={user?.photoURL || { defaultImage }} alt="" />
+                                        </div>
 
+                                    </li>
+                                    <li><a>Item 2</a></li>
+                                </ul>
+                            </details>
+                            <button onClick={signOutUser} className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
+                                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
+                                <span className="relative text-black">Signout</span>
+                            </button>
+                        </div>
+                        :
+                        <div>
+                            <Link to="/signin" className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
+                                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
+                                <span className="relative text-black">Signin</span>
+                            </Link>
+                            <Link to="/signup" className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
+                                <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
+                                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
+                                <span className="relative text-black">Signup</span>
+                            </Link>
+                        </div>
 
-
-
-
-
+                }
+                
             </div>
         </div>
     );

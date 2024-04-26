@@ -2,6 +2,7 @@ import { FcGoogle } from "react-icons/fc";
 import { VscGithub } from "react-icons/vsc";
 import useAuth from "../../Hooks/useAuth";
 import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SocialSignIn = () => {
 
@@ -14,6 +15,13 @@ const SocialSignIn = () => {
         .then(result => {
             if(result.user){
                 setLoading(false)
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Successfully signed in",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
                 navigate (location?.state || '/')
             }
         })
