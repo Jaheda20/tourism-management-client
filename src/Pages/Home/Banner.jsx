@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Banner = () => {
     return (
-        <div className="mt-20 md:mt-12">
+        <div id="banner" className="mt-20 md:mt-12 mb-10 bg-green-600 ">
             <Swiper
             // navigation={true}
             pagination={true}
