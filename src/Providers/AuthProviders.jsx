@@ -24,7 +24,6 @@ const AuthProviders = ({children}) => {
             photoURL: photo
         })
 
-
     }
 
     const signInUser = (email, password) => {

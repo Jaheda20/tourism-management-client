@@ -36,10 +36,22 @@ const SignUp = () => {
             toast.error('Your password must include an Lowercase letter')
             return;
         }
-
         createUser(email, password)
         .then(result =>{
             console.log(result.user)
+            const name = result.user?.displayName;
+            const user = { email, name: name }       
+            fetch('http://localhost:5000/user', {
+                method: "POST",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(data =>{
+                console.log(data)
+            })
             Swal.fire({
                 position: "center",
                 icon: "success",
@@ -68,7 +80,7 @@ const SignUp = () => {
             </div>
             <div className="md:w-1/2 w-full px-2 flex-col">
                 <div className="card shrink-0 w-full max-w-sm md:max-w-4xl shadow-2xl bg-base-100">
-                    <form onSubmit={handleSubmit(onSubmit)} className=" card-body">
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -100,7 +112,6 @@ const SignUp = () => {
                                     showPassword ? <FaRegEye size={18} />
                                     : <FaRegEyeSlash size={18} />
                                 }
-
                             </span>
 
                             <label className="label">
