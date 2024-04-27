@@ -5,6 +5,8 @@ import ErrorPage from "../Pages/ErrorPage";
 import SignUp from "../Pages/Signup/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
 import AboutUs from "../Pages/About/AboutUs";
+import MyListPage from "../MyList/MyListPage";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
         {
           path: "/signin",
           element: <SignIn></SignIn>
+        },
+        {
+          path: "/myList",
+          element: <PrivateRoute><MyListPage></MyListPage></PrivateRoute>
         }
       ]
     },

@@ -1,9 +1,10 @@
-import React from 'react';
+import Banner from "./Banner";
+import './slide.css';
 
 const HomePage = () => {
     return (
         <div>
-            <h3>this is HomePage</h3>
+            <Banner></Banner>
         </div>
     );
 };

@@ -52,7 +52,7 @@ const AuthProviders = ({children}) => {
             setLoading(false);
         })
         return () => unSubscribe();
-    })
+    }, [])
 
     const authInfo = {
         user, createUser, loading, setLoading,

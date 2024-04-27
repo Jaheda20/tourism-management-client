@@ -18,11 +18,11 @@ const Footer = () => {
                         <div className="mt-8">
                             <h2 className="mb-3 font-bold">Contact info</h2>
                             <p className="flex items-center gap-2">
-                            <FcCallback size={20}/>
+                                <FcCallback size={20} />
                                 <span className="text-sm">077-196 3343</span>
                             </p>
                             <p className="flex items-center mt-3 gap-2">
-                            <AiTwotoneMail size={20} color="blue"/>
+                                <AiTwotoneMail size={20} color="blue" />
                                 <span className="text-sm">explorxpert@explorexpert.se</span>
                             </p>
                         </div>
@@ -62,26 +62,27 @@ const Footer = () => {
                                 <button className="border border-indigo-900 rounded-xl w-32 py-1 text-xs ">Download on the
                                     <span className="flex items-center justify-center gap-1 text-base"><FaApple />
                                         App Store</span></button>
+                                <div className="flex gap-1 items-center justify-center mt-5">
+                                    <h1>Follow us-</h1>
+                                    <p><FaFacebookSquare size={30} color="blue" />
+                                    </p>
+                                    <p><FaSquareInstagram size={30} color="red" />
+                                    </p>
+                                    <p><FaSquareXTwitter size={30} color="black" />
+
+                                    </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
-            <div className="flex justify-between py-3 px-10 bg-blue-200">
+            <div className="text-center py-3 px-10 bg-blue-200">
                 <div>
                     <p className="text-xs md:text-base">Copyright © 2024 - All right reserved by ExploreXpert</p>
                 </div>
-                <div className="flex gap-1 items-center justify-center">
-                    
-                    <p><FaFacebookSquare size={30} color="blue"/>
-                    </p>
-                    <p><FaSquareInstagram size={30} color="red"/>
-                    </p>
-                    <p><FaSquareXTwitter size={30} color="black"/>
-
-                    </p>
-
-                </div>
+                
             </div>
         </div>
 

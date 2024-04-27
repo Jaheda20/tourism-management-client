@@ -43,12 +43,12 @@ const Nav = () => {
                                 <summary className="m-1 btn">My Page</summary>
                                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-sky-100 rounded-xl w-52">
                                     <li>
-                                        <div>
-                                            <img className="w-12 rounded-full" src={user?.photoURL || { defaultImage }} alt="" />
+                                        <div className="tooltip flex" data-tip={user?.displayName || 'Unknown User'}>
+                                            <img className=" w-8 md:w-12 rounded-full" src={user?.photoURL || { defaultImage }} alt="" />
                                         </div>
 
                                     </li>
-                                    <li><a>Item 2</a></li>
+                                    <li><Link to="/myList">My List</Link></li>
                                 </ul>
                             </details>
                             <button onClick={signOutUser} className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
