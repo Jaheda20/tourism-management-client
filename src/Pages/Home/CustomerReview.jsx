@@ -46,12 +46,12 @@ const CustomerReview = () => {
                         {reviews.map(review => <SwiperSlide key={review.id} review={review}>
                             <div className="mt-8 space-y-3">
                                 <div className="flex flex-col items-end">
-                                    <h1 className="font-bold text-lg">{review.name}</h1>
-                                    <p className="font-semibold">Visited: {review.visited_location}</p>
+                                    <h1 className="font-bold md:text-lg">{review.name}</h1>
+                                    <p className="font-normal md:font-semibold">Visited: {review.visited_location}</p>
                                 </div>
 
-                                <p><i>"{review.testimonial}"</i></p>
-                                <p><b>Ratings:  {review.rating}/5</b></p>
+                                <p className="text-xs md:text-base"><i>"{review.testimonial}"</i></p>
+                                <p className=" text-xs md:text-base" ><b>Ratings:  {review.rating}/5</b></p>
 
                             </div>
                         </SwiperSlide>)}

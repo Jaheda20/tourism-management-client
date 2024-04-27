@@ -11,14 +11,19 @@ const Nav = () => {
         <>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/" >Home</NavLink></li>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/about">About Us</NavLink></li>
-
+            {
+                user ?
+                <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/addSpots">Add Spots</NavLink></li>
+                :
+                ""
+            }
 
         </>
 
 
     return (
 
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 mb-8">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,7 +46,7 @@ const Nav = () => {
                         <div>
                             <details className="dropdown">
                                 <summary className="m-1 btn">My Page</summary>
-                                <ul className="p-2 shadow menu dropdown-content z-[1] bg-sky-100 rounded-xl w-52">
+                                <ul className="p-2 shadow menu dropdown-content z-[10] bg-sky-100 rounded-xl w-52">
                                     <li>
                                         <div className="tooltip flex" data-tip={user?.displayName || 'Unknown User'}>
                                             <img className=" w-8 md:w-12 rounded-full" src={user?.photoURL || { defaultImage }} alt="" />

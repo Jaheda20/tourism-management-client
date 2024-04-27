@@ -7,6 +7,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import AboutUs from "../Pages/About/AboutUs";
 import MyListPage from "../MyList/MyListPage";
 import PrivateRoute from "./PrivateRoute";
+import AddSpotsPage from "../Pages/Home/AddSpots/AddSpotsPage";
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
         {
           path: "/myList",
           element: <PrivateRoute><MyListPage></MyListPage></PrivateRoute>
+        },
+        {
+          path: "/addSpots",
+          element: <PrivateRoute><AddSpotsPage></AddSpotsPage> </PrivateRoute>
         }
       ]
     },
