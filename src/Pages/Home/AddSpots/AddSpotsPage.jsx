@@ -1,24 +1,61 @@
+import useAuth from "../../../Hooks/useAuth";
 
 
 const AddSpotsPage = () => {
+
+    const {user} = useAuth()
+    const handleAddSpot = e => {
+        e.preventDefault();
+        console.log(user.email)
+        const form = e.target;
+        const photo = form.photo.value;
+        const spotName = form.spotName.value;
+        const country = form.country.value;
+        const location = form.location.value;
+        const season = form.season.value;
+        const duration = form.duration.value;
+        const visitors = form.visitors.value;
+        const cost = form.cost.value;
+        const description = form.description.value;
+        const userName = form.userName.value;
+        const userEmail = form.email.value;
+        const spot = {photo, spotName, country, location, season, duration, visitors, cost, description, userName, userEmail}
+        // console.log(spot)
+        fetch('http://localhost:5000/addSpots', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(spot)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
+
+
+    }
+
+
+
     return (
         <div className="flex flex-col items-center my-10">
-            <h2 className="text-3xl font-bold my-5">Add New Tourist Spot</h2>
+            <h2 className="text-3xl font-bold my-5 text-blue-900">Add New Tourist Spot</h2>
 
-            <div className="card border-2 shrink-0 w-full md:w-4/5 px-2 mx-2 md:mx-8 shadow-2xl bg-base-100">
-                <form className="card-body">
+            <div className="card border-2 shrink-0 w-full md:w-4/5 px-2 mx-2 md:mx-8 shadow-2xl border-orange-400 bg-base-100">
+                <form onSubmit={handleAddSpot} className="card-body">
                     <div className="form-control flex flex-row gap-4">
                         <div className="w-1/2">
                             <label className="label">
                                 <span className="label-text">Image</span>
                             </label>
-                            <input type="text" placeholder="Photo URL" className="input input-bordered w-full" required />
+                            <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered input-warning w-full" required />
                         </div>
                         <div className="w-1/2">
                             <label className="label">
                                 <span className="label-text">Tourist Spot Name</span>
                             </label>
-                            <input type="text" placeholder="Tourist Spot Name" className="input input-bordered w-full" required />
+                            <input type="text" name="spotName" placeholder="Tourist Spot Name" className="input input-bordered input-warning w-full" required />
                         </div>
                     </div>
                     <div className="form-control flex flex-row gap-4">
@@ -26,13 +63,13 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">Country</span>
                             </label>
-                            <input type="text" placeholder="Country Name" className="input input-bordered w-full" required />
+                            <input type="text" name="country" placeholder="Country Name" className="input input-bordered input-warning w-full" required />
                         </div>
                         <div className="w-1/2">
                             <label className="label">
                                 <span className="label-text">Location</span>
                             </label>
-                            <input type="text" placeholder="Location" className="input input-bordered w-full" required />
+                            <input type="text" name="location" placeholder="Location" className="input input-bordered input-warning w-full" required />
                         </div>
                     </div>
                     <div className="form-control flex flex-row gap-4">
@@ -40,8 +77,9 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">Seasonality</span>
                             </label>
-                            <select className="select select-bordered select-lg text-gray rounded-xl w-full">
+                            <select name="season" className="select select-bordered border-orange-300 select-lg text-gray rounded-xl w-full">
                                 <option className="text-xs" value="">Choose a season</option>
+                                <option value="all">All Season</option>
                                 <option value="Summer">Summer</option>
                                 <option value="Autumn">Autumn</option>
                                 <option value="Winter">Winter</option>
@@ -53,7 +91,7 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">Duration</span>
                             </label>
-                            <input type="text" placeholder="Duration" className="input input-bordered w-full" required />
+                            <input type="text" name="duration" placeholder="Duration" className="input input-bordered input-warning w-full" required />
                         </div>
                     </div>
                     <div className="form-control flex flex-row gap-4">
@@ -61,7 +99,13 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">No. of Visitors Per Year</span>
                             </label>
-                            <input type="text" placeholder="Total Visitors Per Year" className="input input-bordered w-full" required />
+                            <input type="text" name="visitors" placeholder="Total Visitors Per Year" className="input input-bordered input-warning w-full" required />
+                        </div>
+                        <div className="w-1/2">
+                            <label className="label">
+                                <span className="label-text">Average Cost in Dollar($)</span>
+                            </label>
+                            <input type="number" name="cost" placeholder="Cost in dollar" className="input input-bordered input-warning w-full" required />
                         </div>
                     </div>
                     <div className="form-control flex flex-row gap-4">
@@ -69,7 +113,7 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">Short Description</span>
                             </label>
-                            <textarea className="textarea textarea-bordered w-full" placeholder="Description" rows={6}  ></textarea>
+                            <textarea className="textarea textarea-bordered border-orange-400 w-full" name="description" placeholder="Description" rows={6}  ></textarea>
                         </div>
                     </div>
                     <div className="form-control flex flex-row gap-4">
@@ -77,13 +121,13 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <input type="text" placeholder="User Name" className="input input-bordered w-full" required />
+                            <input type="text" name="userName" placeholder="User Name" className="input input-bordered input-warning w-full" required />
                         </div>
                         <div className="w-1/2">
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
-                            <input type="email" placeholder="Email" className="input input-bordered w-full" required />
+                            <input type="email" name="email" placeholder="Email" className="input input-bordered input-warning w-full" required />
                         </div>
                     </div>
 
