@@ -11,12 +11,10 @@ const Nav = () => {
         <>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/" >Home</NavLink></li>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/about">About Us</NavLink></li>
-            {
-                user ?
-                <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/addSpots">Add Spots</NavLink></li>
-                :
-                ""
-            }
+            <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/addSpots">Add Spots</NavLink></li>
+            <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/allSpots">All Tourist Spots</NavLink></li>
+
+
 
         </>
 
@@ -77,7 +75,7 @@ const Nav = () => {
                         </div>
 
                 }
-                
+
             </div>
         </div>
     );

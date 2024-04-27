@@ -8,6 +8,8 @@ import AboutUs from "../Pages/About/AboutUs";
 import MyListPage from "../MyList/MyListPage";
 import PrivateRoute from "./PrivateRoute";
 import AddSpotsPage from "../Pages/Home/AddSpots/AddSpotsPage";
+import AllSpots from "../Pages/AllSpots/AllSpots";
+
 
 
 const router = createBrowserRouter([
@@ -39,7 +41,11 @@ const router = createBrowserRouter([
         },
         {
           path: "/addSpots",
-          element: <PrivateRoute><AddSpotsPage></AddSpotsPage> </PrivateRoute>
+          element: <PrivateRoute><AddSpotsPage></AddSpotsPage></PrivateRoute>
+        },
+        {
+          path: "/allSpots",
+          element: <AllSpots></AllSpots>
         }
       ]
     },

@@ -48,6 +48,34 @@
         "testimonial": "Xpert Travel Agency made my vacation stress-free and enjoyable. Their team went above and beyond to ensure every detail of my trip was taken care of. I can't wait to plan my next adventure with them!",
         "rating": 4.7
 
+    },
+    {
+      "id": 8,
+      "name": "Emily Johnson",
+      "visited_location": "London, UK",
+      "testimonial": "I had an amazing experience with Xpert Travel Agency! Their attention to detail and personalized service made my trip unforgettable. I highly recommend them to anyone looking for a hassle-free travel experience.",
+      "rating": 4.8
+    },
+    {
+      "id": 9,
+      "name": "Juan Martinez",
+      "visited_location": "Madrid, Spain",
+      "testimonial": "Xpert Travel Agency exceeded my expectations. From booking to accommodations, everything was seamless. Their knowledgeable staff helped me discover hidden gems in the city. I can't wait to book my next adventure with them!",
+      "rating": 4.7
+    },
+    {
+      "id": 10,
+      "name": "Sophie Li",
+      "visited_location": "Rome, Italy",
+      "testimonial": "I was blown away by the professionalism and efficiency of Xpert Travel Agency. They curated a customized itinerary that perfectly matched my interests. Thanks to them, I had the trip of a lifetime!",
+      "rating": 4.5
+    },
+    {
+      "id": 11,
+      "name": "Miguel Santos",
+      "visited_location": "Bercelona, Spain",
+      "testimonial": "My experience with Xpert Travel Agency was fantastic! They provided top-notch service from start to finish. I appreciated their responsiveness and flexibility in accommodating my travel preferences. Highly recommended!",
+      "rating": 5.0
     }
 
   ]

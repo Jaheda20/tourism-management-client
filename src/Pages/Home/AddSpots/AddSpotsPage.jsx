@@ -1,9 +1,10 @@
+import Swal from "sweetalert2";
 import useAuth from "../../../Hooks/useAuth";
 
 
 const AddSpotsPage = () => {
 
-    const {user} = useAuth()
+    const {user} = useAuth() || {};
     const handleAddSpot = e => {
         e.preventDefault();
         console.log(user.email)
@@ -32,8 +33,14 @@ const AddSpotsPage = () => {
         .then(data =>{
             console.log(data)
         })
-
-
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your data has been added successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+          
     }
 
 
