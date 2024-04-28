@@ -3,6 +3,7 @@ import useAuth from "../Hooks/useAuth";
 import { GrUpdate } from "react-icons/gr";
 import { TiDeleteOutline } from "react-icons/ti";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 
@@ -17,6 +18,38 @@ const MyListPage = () => {
                 setMySpots(data)
             })
     }, [user])
+
+    const handleDelete = (id) =>{
+        console.log(id)
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+        .then((result) => {
+            if(result.isConfirmed){
+                fetch(`http://localhost:5000/delete/${id}`, {
+                    method: "DELETE",
+                })
+                .then(res => res.json())
+                .then(data =>{
+                    console.log(data)
+                    if(data.deletedCount > 0)
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your spot has been deleted.",
+                        icon: "success"
+                    });
+            })
+        }
+    
+        })
+
+    }
 
 
     return (
@@ -46,7 +79,7 @@ const MyListPage = () => {
                                         <td>{mySpot.cost}$</td>
                                         <td><Link to={`/updatePage/${mySpot._id}`}><button className="flex items-center gap-2 font-bold text-blue-600 btn"><GrUpdate />
                                             Update</button></Link></td>
-                                        <td><button className="flex items-center gap-2 font-bold text-orange-600 btn"><TiDeleteOutline />
+                                        <td><button onClick={()=>handleDelete(mySpot._id)} className="flex items-center gap-2 font-bold text-orange-600 btn"><TiDeleteOutline />
                                             Delete</button></td>
                                     </tr>)
                                 }
