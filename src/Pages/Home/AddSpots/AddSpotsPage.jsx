@@ -4,7 +4,7 @@ import useAuth from "../../../Hooks/useAuth";
 
 const AddSpotsPage = () => {
 
-    const {user} = useAuth() || {};
+    const { user } = useAuth() || {};
     const handleAddSpot = e => {
         e.preventDefault();
         console.log(user.email)
@@ -19,8 +19,8 @@ const AddSpotsPage = () => {
         const cost = form.cost.value;
         const description = form.description.value;
         const userName = form.userName.value;
-        const userEmail = form.email.value;
-        const spot = {photo, spotName, country, location, season, duration, visitors, cost, description, userName, userEmail}
+        const email = user.email;
+        const spot = { photo, spotName, country, location, season, duration, visitors, cost, description, userName, email }
         // console.log(spot)
         fetch('http://localhost:5000/addSpots', {
             method: "POST",
@@ -29,18 +29,21 @@ const AddSpotsPage = () => {
             },
             body: JSON.stringify(spot)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-        })
-        Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Your data has been added successfully",
-            showConfirmButton: false,
-            timer: 1500
-          });
-          
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data?.insertedId) {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: "Your data has been added successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
+
+
     }
 
 
@@ -134,7 +137,7 @@ const AddSpotsPage = () => {
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Email" className="input input-bordered input-warning w-full" required />
+                            <input type="email" placeholder="Email" className="input input-bordered input-warning w-full" required />
                         </div>
                     </div>
 

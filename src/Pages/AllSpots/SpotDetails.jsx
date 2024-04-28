@@ -1,8 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 
 const SpotDetails = () => {
+
     const singleSpot = useLoaderData();
-    const { photo, spotName, country, location, season, duration, visitors, cost, description, userName, userEmail } = singleSpot;
+    const { photo, spotName, country, location, season, duration, visitors, cost, description, userName, email } = singleSpot;
 
     return (
         <div className="mt-20 mb-10 container mx-auto">
@@ -16,9 +17,9 @@ const SpotDetails = () => {
             <div className="flex items-center justify-center">
                 <img src={photo} alt="" className="w-3/4 rounded-2xl shadow-xl" />
             </div>
-            <div className="mt-10 mx-40 flex flex-col md:flex-row justify-around">
+            <div className="mt-10 mx-10 md:mx-40 flex flex-col md:flex-row justify-around">
                 <div>
-                <p className="text-lg w-1/2"><b>Description: </b>
+                <p className="text-lg md:w-1/2"><b>Description: </b>
                     <br />
                     <span className="mt-2">{description}</span>
                 </p>
@@ -30,10 +31,10 @@ const SpotDetails = () => {
                 </div>
                 </div>
                 
-                <div className="flex flex-col w-1/2 border shadow-xl h-32 p-4">
+                <div className="flex flex-col mt-5 md:w-1/2 border shadow-xl h-32 p-4">
                     <p><b>For more details contact-</b></p>
                     <p className="mt-2">{userName}</p>
-                    <p>Email: {userEmail}</p>
+                    <p>Email: {email} </p>
                 </div>
 
             </div>

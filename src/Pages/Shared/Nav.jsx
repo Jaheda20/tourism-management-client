@@ -47,7 +47,7 @@ const Nav = () => {
                                 <ul className="p-2 shadow menu dropdown-content z-[10] bg-sky-100 rounded-xl w-52">
                                     <li>
                                         <div className="tooltip flex" data-tip={user?.displayName || 'Unknown User'}>
-                                            <img className=" w-8 md:w-12 rounded-full" src={user?.photoURL || { defaultImage }} alt="" />
+                                            <img className="w-8 md:w-12 rounded-full" src={user?.photoURL || {defaultImage}} alt="" />
                                         </div>
 
                                     </li>
