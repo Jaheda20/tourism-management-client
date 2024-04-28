@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Zoom } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 
@@ -24,6 +25,7 @@ const Destinations = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 mx-4 gap-4">
                 {
                     mySpots.map(spot => <div key={spot._id}>
+                        <Zoom>
                         <div className="card w-96 bg-base-100 shadow-xl" style={{ backgroundImage: `url(${spot.photo})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: "no-repeat" }}>
                             <div className="card-body w-full " >
                                 <div className="bg-gray-300 w-full rounded-xl p-1 opacity-80">
@@ -47,6 +49,7 @@ const Destinations = () => {
                                 </div>
                             </div>
                         </div>
+                        </Zoom>
 
                     </div>)
                 }

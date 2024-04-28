@@ -2,10 +2,10 @@ import { Link, useLoaderData } from "react-router-dom";
 import { FaCoins } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
 import { useState } from "react";
+import { Slide } from "react-awesome-reveal";
 
 
 const AllSpots = () => {
-
     const allSpots = useLoaderData();
     const [sortBy, setSortBy] = useState("");
 
@@ -22,7 +22,7 @@ const AllSpots = () => {
         else if (sortBy === 'Descending') {
             return b.cost - a.cost
         }
-        return 0;
+        return ;
     })
     console.log(sorted)
     
@@ -52,6 +52,7 @@ const AllSpots = () => {
                 {
                     allSpots.map(spot =>
                         <div key={spot._id}>
+                            <Slide direction="top">
                             <div className="card bg-base-100 shadow-2xl mx-4 border-2 border-orange-400">
                                 <figure className="px-10 pt-10">
                                     <img src={spot.photo} alt="" className="rounded-xl h-52" />
@@ -79,6 +80,7 @@ const AllSpots = () => {
                                     </div>
                                 </div>
                             </div>
+                            </Slide>
 
                         </div>)
                 }

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import discountAnimation from "../../assets/discount.json"
 import Lottie from "lottie-react";
+import { Slide } from "react-awesome-reveal";
 
 const Discount = () => {
     return (
@@ -8,6 +9,7 @@ const Discount = () => {
             <div className="w-1/4">
             <Lottie animationData={discountAnimation} loop={true} />
             </div>
+            <Slide direction="right">
             <div className="flex flex-col">
                 <h1 className="text-blue-900 text-3xl font-bold mb-5">Get Instant Discounts</h1>
                 <p>Simply sign into your Explorexpert.com account and look for the <i><b>Star</b></i> logo to save</p>
@@ -24,6 +26,7 @@ const Discount = () => {
                             </Link>
                 </div>
             </div>
+            </Slide>
     
         </div>
     );
