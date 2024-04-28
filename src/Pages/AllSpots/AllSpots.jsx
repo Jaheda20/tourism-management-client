@@ -1,10 +1,39 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { FaCoins } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
+import { useState } from "react";
 
 
 const AllSpots = () => {
+    // const [sortedSpots, setSortedSpots] = useState([]);
+    // const [sortby, setSortBy] = useState('');
     const allSpots = useLoaderData();
+
+    // const handleSorting = (e) =>{
+    //     const sortByValue = e.target.value;
+    //     setSortBy(sortByValue);
+    //     const sortedSpots = [...allSpots];
+    //     if(sortByValue === 'ascending'){
+    //         return sortedSpots.sort((a,b) => a.cost - b.cost);
+    //     }
+    //     else if (sortByValue === 'descending'){
+    //         returnsortedSpots.sort((a,b) => b.cost - a.cost)
+    //     }
+    //     setSortedSpots(sortedSpots)
+    // }
+
+    // const sortAllSpots = (allSpots, sortby) =>{
+    //     const sortedList = [...Spots].sort((a,b)=>{
+    //         if (sortby === 'cost'){
+    //             return b.cost - a.cost
+    //         }
+    //         else if(sortby === 'visitors'){
+    //             return b.visitors - a.visitors
+    //         }
+            
+    //     });
+    //     setSortedSpots(sortedList)
+    // }
 
 
     return (
@@ -13,6 +42,16 @@ const AllSpots = () => {
                 <h1 className="mt-8 font-bold text-4xl text-blue-900">Explore Europe: Unveiling Spectacular Destinations</h1>
                 <p className="font-inter font-normal text-lg max-w-5xl ">Embark on a global journey through captivating destinations, from the majestic Tower of London steeped in history to the vibrant hues of Keukenhof's tulip fields. Discover cultural treasures at the British Museum and witness the northern lights in Kiruna, Sweden. Let each destination paint a unique story of beauty and wonder.</p>
             </div>
+
+            <div className="flex items-center justify-center mt-10">
+                <select   className="select select-bordered select-lg text-white text-xl font-bold rounded-xl bg-green-500 max-w-xs">
+                    <option value="">Sort By Cost</option>
+                    <option value="Ascending">Lowest First</option>
+                    <option value="Descending">Highest First</option>  
+                </select>
+
+            </div >
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12 mb-10">
                 {
                     allSpots.map(spot =>
@@ -34,10 +73,13 @@ const AllSpots = () => {
 
                                     <p> Seasonal Wonders: {spot.season} Season</p>
                                     <div className="card-actions">
-                                        <button className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
-                                <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
-                                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
-                                <span className="relative text-black">View Details</span></button>
+                                        <Link to={`/spotDetails/${spot._id}`}>
+                                            <button className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
+                                                <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
+                                                <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>
+                                                <span className="relative text-black">View Details</span></button>
+                                        </Link>
+
                                     </div>
                                 </div>
                             </div>
@@ -46,6 +88,7 @@ const AllSpots = () => {
                 }
             </div>
             
+
 
         </div>
     );

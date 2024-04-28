@@ -9,6 +9,7 @@ import MyListPage from "../MyList/MyListPage";
 import PrivateRoute from "./PrivateRoute";
 import AddSpotsPage from "../Pages/Home/AddSpots/AddSpotsPage";
 import AllSpots from "../Pages/AllSpots/AllSpots";
+import SpotDetails from "../Pages/AllSpots/SpotDetails";
 
 
 
@@ -47,6 +48,11 @@ const router = createBrowserRouter([
           path: "/allSpots",
           element: <AllSpots></AllSpots>,
           loader: () => fetch('http://localhost:5000/addSpots')
+        },
+        {
+          path: "/spotDetails/:id",
+          element: <SpotDetails></SpotDetails>,
+          loader: ({params})=>fetch(`http://localhost:5000/addSpots/${params.id}`)
         }
       ]
     },
