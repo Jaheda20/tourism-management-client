@@ -39,8 +39,8 @@ const AllSpots = () => {
                 <p className="font-inter font-normal text-lg max-w-5xl ">Embark on a global journey through captivating destinations, from the majestic Tower of London steeped in history to the vibrant hues of Keukenhof's tulip fields. Discover cultural treasures at the British Museum and witness the northern lights in Kiruna, Sweden. Let each destination paint a unique story of beauty and wonder.</p>
             </div>
 
-            <div className="flex items-center justify-center mt-10">
-                <select value={sortBy} onChange={handleSorting} className="select select-bordered select-lg text-white text-xl font-bold rounded-xl bg-green-500 max-w-xs">
+            <div className="flex justify-end items-end mr-4 mt-10">
+                <select value={sortBy} onChange={handleSorting} className="select select-bordered select-lg text-orange-500 text-lg font-bold rounded-xl bg-blue-200 max-w-xs">
                     <option value="">Sort By Cost</option>
                     <option value="Ascending">Lowest First</option>
                     <option value="Descending">Highest First</option>

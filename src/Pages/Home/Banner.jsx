@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Banner = () => {
     return (
-        <div id="banner" className="mt-20 md:mt-12 mb-10 bg-green-600 ">
+        <div id="banner" className="mt-20 md:mt-12 mb-10 ">
             <Swiper
             // navigation={true}
             pagination={true}
@@ -16,32 +16,34 @@ const Banner = () => {
             autoplay={
                 {delay:2500}
             }
-            >
-                
-                
+            >          
 
-                <SwiperSlide>
+                <SwiperSlide className="slide">
                     <div className='slide slide1'>
-                        <h1>Slide 1</h1>
+                        <h1 className="p-2 text-6xl bg-gray-300 opacity-80 text-blue-900 text-center font-bold ">Beyond Borders: 
+                        <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
 
 
-                <SwiperSlide>
+                <SwiperSlide className="slide">
                     <div className='slide slide2'>
-                        <h1>slide 2</h1>
+                    <h1 className="p-2 text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
+                        <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide className="slide">
                     <div className='slide slide3'>
-                        <h2>slide 3</h2>
+                    <h1 className="p-2 text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
+                        <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                <SwiperSlide className="slide">
                     <div className='slide slide4'>
-                        <h3>slide 4</h3>
+                    <h1 className="p-2 text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
+                        <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
             </Swiper>
