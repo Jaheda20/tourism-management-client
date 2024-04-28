@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const MyListPage = () => {
     const { user } = useAuth() || {};
     const [mySpots, setMySpots] = useState([]);
+    const [control, setControl] = useState(false);
 
     useEffect(() => {
         fetch(`http://localhost:5000/myList/${user?.email}`)
@@ -17,7 +18,7 @@ const MyListPage = () => {
             .then(data => {
                 setMySpots(data)
             })
-    }, [user])
+    }, [user, control])
 
     const handleDelete = (id) =>{
         console.log(id)
@@ -44,6 +45,8 @@ const MyListPage = () => {
                         text: "Your spot has been deleted.",
                         icon: "success"
                     });
+                    setControl(!control)
+                    
             })
         }
     
