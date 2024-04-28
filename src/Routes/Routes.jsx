@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         },
         {
           path: "/spotDetails/:id",
-          element: <SpotDetails></SpotDetails>,
+          element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
           loader: ({params})=>fetch(`http://localhost:5000/addSpots/${params.id}`)
         }
       ]
