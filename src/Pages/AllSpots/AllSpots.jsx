@@ -1,31 +1,33 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaCoins } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 const AllSpots = () => {
 
     const allSpots = useLoaderData();
     const [sortBy, setSortBy] = useState("");
-    const [sortedSpots, setSortedSpots] = useState([]);
 
     const handleSorting = e => {
         setSortBy(e.target.value)
         console.log(e.target.value)
         
+        
     }  
+    const sorted = allSpots.sort((a, b) => {
+        if (sortBy === 'Ascending') {
+            return a.cost - b.cost
+        }
+        else if (sortBy === 'Descending') {
+            return b.cost - a.cost
+        }
+        return 0;
+    })
+    console.log(sorted)
+    
 
-    const sorted = [...allSpots].sort((a, b) => {
-            if (sortBy === 'Ascending') {
-                return a.cost - b.cost
-            }
-            else if (sortBy === 'Descending') {
-                return b.cost - a.cost
-            }
-            return 0;
-        })
-        console.log(sorted)
+    
     
     
 
