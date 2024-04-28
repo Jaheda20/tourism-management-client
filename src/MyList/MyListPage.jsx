@@ -17,6 +17,8 @@ const MyListPage = () => {
                 setMySpots(data)
             })
     }, [user])
+
+
     return (
         <div className="container mx-auto text-center flex flex-col items-center">
             <h2 className="text-4xl text-blue-900 mt-20 mb-14">My Listed Tourist Spots</h2>
@@ -42,7 +44,7 @@ const MyListPage = () => {
                                         <td>{mySpot.country}</td>
                                         <td>{mySpot.duration}</td>
                                         <td>{mySpot.cost}$</td>
-                                        <td><Link to="/updatePage"><button className="flex items-center gap-2 font-bold text-blue-600 btn"><GrUpdate />
+                                        <td><Link to={`/updatePage/${mySpot._id}`}><button className="flex items-center gap-2 font-bold text-blue-600 btn"><GrUpdate />
                                             Update</button></Link></td>
                                         <td><button className="flex items-center gap-2 font-bold text-orange-600 btn"><TiDeleteOutline />
                                             Delete</button></td>
