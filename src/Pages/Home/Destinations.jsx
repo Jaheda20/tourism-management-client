@@ -21,7 +21,7 @@ const Destinations = () => {
                 <h1 className="mt-8 font-bold text-4xl text-blue-900">Discover Captivating Destinations</h1>
                 <p className="font-inter font-normal text-lg max-w-5xl ">Embark on a global journey through breathtaking tourist spots, each offering a unique blend of culture, history, and natural beauty. Explore iconic landmarks and hidden gems that will leave you inspired and awe-struck</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 mx-4 gap-4">
                 {
                     mySpots.map(spot => <div key={spot._id}>
                         <div className="card w-96 bg-base-100 shadow-xl" style={{ backgroundImage: `url(${spot.photo})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: "no-repeat" }}>

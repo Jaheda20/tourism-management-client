@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import useAuth from "../../../Hooks/useAuth";
+import useAuth from "../../Hooks/useAuth";
 
 
 const AddSpotsPage = () => {

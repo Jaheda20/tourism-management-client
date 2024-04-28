@@ -7,7 +7,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import AboutUs from "../Pages/About/AboutUs";
 import MyListPage from "../MyList/MyListPage";
 import PrivateRoute from "./PrivateRoute";
-import AddSpotsPage from "../Pages/Home/AddSpots/AddSpotsPage";
+import AddSpotsPage from "../Pages/AddSpots/AddSpotsPage";
 import AllSpots from "../Pages/AllSpots/AllSpots";
 import SpotDetails from "../Pages/AllSpots/SpotDetails";
 

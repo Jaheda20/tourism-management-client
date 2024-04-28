@@ -17,20 +17,20 @@ const MyListPage = () => {
             })
     }, [user])
     return (
-        <div className="container mx-auto text-center">
+        <div className="container mx-auto text-center flex flex-col items-center">
             <h2 className="text-4xl text-blue-900 mt-20 mb-14">My Listed Tourist Spots</h2>
-            <div className="overflow-x-auto mb-10 border border-orange-400 rounded-xl p-4">
-                        <table className="table">
+            <div className="overflow-x-auto mb-10 border border-orange-400 rounded-xl p-4 ">
+                        <table className="table-auto">
                             
                             <thead>
                                 <tr>
                                     <th></th>
-                                    <th className="text-lg">Spot Name</th>
-                                    <th className="text-lg">Country</th>
-                                    <th className="text-lg">Duration of Stay</th>
-                                    <th className="text-lg">Average Cost</th>
-                                    <th className="text-lg"></th>
-                                    <th className="text-lg"></th>
+                                    <th>Spot Name</th>
+                                    <th>Country</th>
+                                    <th>Duration of Stay</th>
+                                    <th>Average Cost</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
