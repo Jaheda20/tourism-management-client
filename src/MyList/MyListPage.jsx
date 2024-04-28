@@ -36,7 +36,7 @@ const MyListPage = () => {
                             <tbody>
                                 {
                                     mySpots.map(mySpot => <tr key={mySpot._id}>
-                                        <th>1</th>
+                                        <th></th>
                                         <td>{mySpot.spotName}</td>
                                         <td>{mySpot.country}</td>
                                         <td>{mySpot.duration}</td>
