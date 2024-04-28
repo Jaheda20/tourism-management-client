@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import { GrUpdate } from "react-icons/gr";
 import { TiDeleteOutline } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 
 
@@ -41,8 +42,8 @@ const MyListPage = () => {
                                         <td>{mySpot.country}</td>
                                         <td>{mySpot.duration}</td>
                                         <td>{mySpot.cost}$</td>
-                                        <td><button className="flex items-center gap-2 font-bold text-blue-600 btn"><GrUpdate />
-                                            Update</button></td>
+                                        <td><Link to="/updatePage"><button className="flex items-center gap-2 font-bold text-blue-600 btn"><GrUpdate />
+                                            Update</button></Link></td>
                                         <td><button className="flex items-center gap-2 font-bold text-orange-600 btn"><TiDeleteOutline />
                                             Delete</button></td>
                                     </tr>)

@@ -1,39 +1,33 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { FaCoins } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 const AllSpots = () => {
-    // const [sortedSpots, setSortedSpots] = useState([]);
-    // const [sortby, setSortBy] = useState('');
+
     const allSpots = useLoaderData();
+    const [sortBy, setSortBy] = useState("");
+    const [sortedSpots, setSortedSpots] = useState([]);
 
-    // const handleSorting = (e) =>{
-    //     const sortByValue = e.target.value;
-    //     setSortBy(sortByValue);
-    //     const sortedSpots = [...allSpots];
-    //     if(sortByValue === 'ascending'){
-    //         return sortedSpots.sort((a,b) => a.cost - b.cost);
-    //     }
-    //     else if (sortByValue === 'descending'){
-    //         returnsortedSpots.sort((a,b) => b.cost - a.cost)
-    //     }
-    //     setSortedSpots(sortedSpots)
-    // }
+    const handleSorting = e => {
+        setSortBy(e.target.value)
+        console.log(e.target.value)
+        
+    }  
 
-    // const sortAllSpots = (allSpots, sortby) =>{
-    //     const sortedList = [...Spots].sort((a,b)=>{
-    //         if (sortby === 'cost'){
-    //             return b.cost - a.cost
-    //         }
-    //         else if(sortby === 'visitors'){
-    //             return b.visitors - a.visitors
-    //         }
-            
-    //     });
-    //     setSortedSpots(sortedList)
-    // }
+    const sorted = [...allSpots].sort((a, b) => {
+            if (sortBy === 'Ascending') {
+                return a.cost - b.cost
+            }
+            else if (sortBy === 'Descending') {
+                return b.cost - a.cost
+            }
+            return 0;
+        })
+        console.log(sorted)
+    
+    
 
 
     return (
@@ -44,10 +38,10 @@ const AllSpots = () => {
             </div>
 
             <div className="flex items-center justify-center mt-10">
-                <select   className="select select-bordered select-lg text-white text-xl font-bold rounded-xl bg-green-500 max-w-xs">
+                <select value={sortBy} onChange={handleSorting} className="select select-bordered select-lg text-white text-xl font-bold rounded-xl bg-green-500 max-w-xs">
                     <option value="">Sort By Cost</option>
                     <option value="Ascending">Lowest First</option>
-                    <option value="Descending">Highest First</option>  
+                    <option value="Descending">Highest First</option>
                 </select>
 
             </div >
@@ -87,7 +81,7 @@ const AllSpots = () => {
                         </div>)
                 }
             </div>
-            
+
 
 
         </div>
