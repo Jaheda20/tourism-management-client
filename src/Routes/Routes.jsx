@@ -11,6 +11,7 @@ import AddSpotsPage from "../Pages/AddSpots/AddSpotsPage";
 import AllSpots from "../Pages/AllSpots/AllSpots";
 import SpotDetails from "../Pages/AllSpots/SpotDetails";
 import UpdatePage from "../MyList/UpdatePage";
+import SelectedSpots from "../Pages/SelectedSpots/SelectedSpots";
 
 
 
@@ -58,8 +59,14 @@ const router = createBrowserRouter([
         {
           path: "/updatePage/:id",
           element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/addSpots/${params.id}`)
+          loader: ({params})=>fetch(`http://localhost:5000/addSpots/${params.id}`)       
+        },
+        {
+          path: "/selectedSpots/:country",
+          element: <SelectedSpots></SelectedSpots>,
+          loader: ({params})=>fetch(`http://localhost:5000/selectedSpots/${params.country}`)
         }
+        
       ]
     },
   ]);

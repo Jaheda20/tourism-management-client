@@ -3,8 +3,6 @@ import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { VscGithub } from "react-icons/vsc";
 import { Link, useNavigate } from "react-router-dom";
 import loginAnimation from "../../assets/loginAnimation.json"
 import Lottie from "lottie-react";
