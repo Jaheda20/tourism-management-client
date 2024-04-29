@@ -4,6 +4,8 @@ Explore Xpert is a website designed to help users explore tourist spots in vario
 
 ## website-
 
+## Category-
+Euro-zone
 
 ## Features
 
