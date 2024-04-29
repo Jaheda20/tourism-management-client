@@ -13,15 +13,14 @@ const Nav = () => {
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/about">About Us</NavLink></li>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/addSpots">Add Spots</NavLink></li>
             <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/allSpots">All Tourist Spots</NavLink></li>
-
-
+            <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 font-bold' : "font-bold"} to="/myList">My List</NavLink></li>
 
         </>
 
 
     return (
 
-        <div className="navbar bg-base-100 mb-8">
+        <div className="navbar bg-base-100 mb-8 mt-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,19 +40,11 @@ const Nav = () => {
             <div className="navbar-end">
                 {
                     user ?
-                        <div>
-                            <details className="dropdown">
-                                <summary className="m-1 btn">My Page</summary>
-                                <ul className="p-2 shadow menu dropdown-content z-[10] bg-sky-100 rounded-xl w-52">
-                                    <li>
-                                        <div className="tooltip flex" data-tip={user?.displayName || 'Unknown User'}>
-                                            <img className="w-8 md:w-12 rounded-full" src={user?.photoURL || {defaultImage}} alt="" />
-                                        </div>
+                        <div className="flex gap-2">
+                            <div className="tooltip flex" data-tip={user?.displayName || 'Unknown User'}>
+                                <img className="w-8 md:w-12 rounded-full" src={user?.photoURL ||  defaultImage } alt="" />
+                            </div>
 
-                                    </li>
-                                    <li><Link to="/myList">My List</Link></li>
-                                </ul>
-                            </details>
                             <button onClick={signOutUser} className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">
                                 <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-sky-200 via-sky-500 to-sky-700"></span>
                                 <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-blue-400 rounded-full opacity-7s0 group-hover:rotate-90 ease"></span>

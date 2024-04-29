@@ -1,4 +1,5 @@
 import Banner from "./Banner";
+import Countries from "./Countries";
 import CustomerReview from "./CustomerReview";
 import Destinations from "./Destinations";
 import Discount from "./Discount";
@@ -12,6 +13,7 @@ const HomePage = () => {
                 <Banner></Banner>
             </div>
             {/* <Slider></Slider> */}
+            <Countries></Countries>
             <Destinations></Destinations>
             <Discount></Discount>
             <CustomerReview></CustomerReview>

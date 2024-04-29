@@ -18,9 +18,8 @@ const Destinations = () => {
 
     return (
         <div className="mt-10 mb-10 container mx-auto">
-            <div className="container mx-auto pt-14 flex flex-col items-center text-center gap-6 mb-5 ">
+            <div className="container mx-auto pt-14 flex flex-col items-start text-center gap-6 mb-5 ">
                 <h1 className="mt-8 font-bold text-4xl text-blue-900">Discover Captivating Destinations</h1>
-                <p className="font-inter font-normal text-lg max-w-5xl ">Embark on a global journey through breathtaking tourist spots, each offering a unique blend of culture, history, and natural beauty. Explore iconic landmarks and hidden gems that will leave you inspired and awe-struck</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 mx-4 gap-4">
                 {

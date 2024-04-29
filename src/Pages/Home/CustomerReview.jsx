@@ -18,8 +18,8 @@ const CustomerReview = () => {
 
     return (
         <div className="">
-            <div className="container mx-auto pt-14 flex flex-col items-center text-center gap-6 mb-5">
-                <h1 className="mt-8 font-bold text-4xl">What Our Customers Say About Us?</h1>
+            <div className="container mx-auto pt-14 flex flex-col items-start gap-6 mb-5">
+                <h1 className="mt-8 font-bold text-4xl text-blue-900">What Our Customers Say About Us?</h1>
                 <p className="font-inter font-normal text-lg max-w-5xl ">Discover why our customers love us! Dive into the testimonials and experiences shared by our satisfied clients. Get inspired by real-life experiences and join the community of happy customers who trust us for their needs.</p>
             </div>
 

@@ -30,12 +30,13 @@ const SpotDetails = () => {
                     <p><b>Avg. cost :</b> {cost}</p>
                 </div>
                 </div>
-                
+           
                 <div className="flex flex-col mt-5 md:w-1/2 border shadow-xl h-32 p-4">
                     <p><b>For more details contact-</b></p>
                     <p className="mt-2">{userName}</p>
                     <p>Email: {email} </p>
                 </div>
+                
 
             </div>
 
