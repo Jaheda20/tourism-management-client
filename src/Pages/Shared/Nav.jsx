@@ -38,11 +38,12 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="navbar-end">
+                <input type="checkbox" value="light" className="toggle theme-controller" />
                 {
                     user ?
                         <div className="flex gap-2">
                             <div className="tooltip flex" data-tip={user?.displayName || 'Unknown User'}>
-                                <img className="w-8 md:w-12 rounded-full" src={user?.photoURL ||  defaultImage } alt="" />
+                                <img className="w-8 md:w-12 rounded-full" src={user?.photoURL || defaultImage} alt="" />
                             </div>
 
                             <button onClick={signOutUser} className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">

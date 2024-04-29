@@ -3,7 +3,6 @@ import Countries from "./Countries";
 import CustomerReview from "./CustomerReview";
 import Destinations from "./Destinations";
 import Discount from "./Discount";
-// import Slider from "./Slider";
 import './slide.css';
 
 const HomePage = () => {
@@ -12,9 +11,8 @@ const HomePage = () => {
             <div>
                 <Banner></Banner>
             </div>
-            {/* <Slider></Slider> */}
-            <Countries></Countries>
             <Destinations></Destinations>
+            <Countries></Countries>
             <Discount></Discount>
             <CustomerReview></CustomerReview>
         </div>
