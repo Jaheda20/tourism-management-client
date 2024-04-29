@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import SocialSignIn from "./SocialSignIn";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const SignIn = () => {
@@ -48,7 +49,9 @@ const SignIn = () => {
 
     return (
         <div className="w-full p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800 flex flex-col md:flex-row mt-8 pt-10">
-
+            <Helmet>
+                <title>ExloreXpert || Sign in</title>
+            </Helmet>
             <div className="md:w-1/2 flex flex-col items-center">
                 <h2 className="mb-5 text-3xl font-semibold text-center text-indigo-800">Login to your account</h2>
                 <p className="text-sm text-center dark:text-gray-600">Dont have account?

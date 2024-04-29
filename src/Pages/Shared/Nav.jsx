@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../public/images/logo.jpg"
+import logo from "/images/logo.jpg"
 import useAuth from "../../Hooks/useAuth";
-import defaultImage from "../../../public/images/user.png";
+import defaultImage from "/public/images/user.png";
 import { useEffect, useState } from "react";
 
 const Nav = () => {
@@ -27,7 +27,6 @@ const Nav = () => {
 const navLinks =
     <>
         <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 dark:text-blue-800 font-bold' : "font-bold"} to="/" >Home</NavLink></li>
-        <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 dark:text-blue-800 font-bold' : "font-bold"} to="/about">About Us</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 dark:text-blue-800 font-bold' : "font-bold"} to="/addSpots">Add Spots</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 dark:text-blue-800 font-bold' : "font-bold"} to="/allSpots">All Tourist Spots</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? 'bg-blue-200 dark:text-blue-800 font-bold' : "font-bold"} to="/myList">My List</NavLink></li>

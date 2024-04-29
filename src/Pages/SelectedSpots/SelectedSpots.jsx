@@ -7,6 +7,7 @@ const SelectedSpots = () => {
 
     return (
         <div className="container mx-auto">
+            
             <h2 className="text-3xl font-bold dark:text-blue-400  text-blue-900 mb-5">Tourist Spots </h2>
             <div className="">
                 {

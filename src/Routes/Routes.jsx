@@ -4,7 +4,6 @@ import HomePage from "../Pages/Home/HomePage";
 import ErrorPage from "../Pages/ErrorPage";
 import SignUp from "../Pages/Signup/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
-import AboutUs from "../Pages/About/AboutUs";
 import MyListPage from "../MyList/MyListPage";
 import PrivateRoute from "./PrivateRoute";
 import AddSpotsPage from "../Pages/AddSpots/AddSpotsPage";
@@ -26,11 +25,6 @@ const router = createBrowserRouter([
           element: <HomePage></HomePage>
         },
         {
-          path: "/about",
-          element: <AboutUs></AboutUs>
-
-        },
-        {
           path: "/signup",
           element: <SignUp></SignUp>
         },
@@ -49,22 +43,22 @@ const router = createBrowserRouter([
         {
           path: "/allSpots",
           element: <AllSpots></AllSpots>,
-          loader: () => fetch('http://localhost:5000/addSpots')
+          loader: () => fetch('https://tourism-management-project-server.vercel.app/addSpots')
         },
         {
           path: "/spotDetails/:id",
           element: <PrivateRoute><SpotDetails></SpotDetails></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/addSpots/${params.id}`)
+          loader: ({params})=>fetch(`https://tourism-management-project-server.vercel.app/addSpots/${params.id}`)
         },
         {
           path: "/updatePage/:id",
           element: <PrivateRoute><UpdatePage></UpdatePage></PrivateRoute>,
-          loader: ({params})=>fetch(`http://localhost:5000/addSpots/${params.id}`)       
+          loader: ({params})=>fetch(`https://tourism-management-project-server.vercel.app/addSpots/${params.id}`)       
         },
         {
           path: "/selectedSpots/:country",
           element: <SelectedSpots></SelectedSpots>,
-          loader: ({params})=>fetch(`http://localhost:5000/selectedSpots/${params.country}`)
+          loader: ({params})=>fetch(`https://tourism-management-project-server.vercel.app/selectedSpots/${params.country}`)
         }
         
       ]

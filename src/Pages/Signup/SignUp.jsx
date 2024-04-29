@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import registerPhoto from "../../../public/images/regPic.jpg"
+import registerPhoto from "/images/regPic.jpg"
 import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { FaRegEye } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const SignUp = () => {
@@ -41,7 +42,7 @@ const SignUp = () => {
             console.log(result.user)
             const name = result.user?.displayName;
             const user = { email, name: name }       
-            fetch('http://localhost:5000/user', {
+            fetch('https://tourism-management-project-server.vercel.app/user', {
                 method: "POST",
                 headers: {
                     'content-type': 'application/json'
@@ -71,6 +72,9 @@ const SignUp = () => {
 
     return (
         <div className="hero mt-12 mb-20 flex flex-col md:flex-row items-center justify-center md:px-12">
+           <Helmet>
+                <title>ExloreXpert || Sign up</title>
+            </Helmet>
             <div className="md:w-1/2">
             <div className="text-center">
                     <h1 className="text-2xl md:text-5xl font-bold mb-5 text-blue-900">Join with us</h1>

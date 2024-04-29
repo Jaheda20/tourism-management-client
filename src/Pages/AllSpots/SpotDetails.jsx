@@ -1,12 +1,16 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const SpotDetails = () => {
 
     const singleSpot = useLoaderData();
-    const { photo, spotName, country, location, season, duration, visitors, cost, description, userName, email } = singleSpot;
+    const { _id, photo, spotName, country, location, season, duration, visitors, cost, description, userName, email } = singleSpot;
 
     return (
         <div className="mt-20 mb-10 container mx-auto">
+            <Helmet>
+                <title>Spot Details : {_id}</title>
+            </Helmet>
             <div className="flex flex-col items-center">
                 <h2 className="text-6xl font-bold text-blue-900">{spotName}</h2>
                 <div className="flex gap-2 text-2xl mt-5 mb-10 font-bold">

@@ -3,6 +3,7 @@ import { FaCoins } from "react-icons/fa6";
 import { IoIosPeople } from "react-icons/io";
 import { useState } from "react";
 import { Slide } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 
 
 const AllSpots = () => {
@@ -11,8 +12,7 @@ const AllSpots = () => {
 
     const handleSorting = e => {
         setSortBy(e.target.value)
-        console.log(e.target.value)
-        
+        console.log(e.target.value)   
         
     }  
     const sorted = allSpots.sort((a, b) => {
@@ -30,6 +30,9 @@ const AllSpots = () => {
 
     return (
         <div className="container mx-auto">
+            <Helmet>
+                <title>ExloreXpert || All Spots</title>
+            </Helmet>
             <div className="container mx-auto pt-14 flex flex-col items-center text-center gap-6 mb-5 ">
                 <h1 className="mt-8 dark:text-blue-400 font-bold text-4xl text-blue-900">Explore Europe: Unveiling Spectacular Destinations</h1>
                 <p className="font-inter font-normal text-lg max-w-5xl ">Embark on a global journey through captivating destinations, from the majestic Tower of London steeped in history to the vibrant hues of Keukenhof's tulip fields. Discover cultural treasures at the British Museum and witness the northern lights in Kiruna, Sweden. Let each destination paint a unique story of beauty and wonder.</p>

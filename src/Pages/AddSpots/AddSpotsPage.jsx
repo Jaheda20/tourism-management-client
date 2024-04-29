@@ -1,5 +1,6 @@
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet";
 
 
 const AddSpotsPage = () => {
@@ -22,7 +23,7 @@ const AddSpotsPage = () => {
         const email = user.email;
         const spot = { photo, spotName, country, location, season, duration, visitors, cost, description, userName, email }
         // console.log(spot)
-        fetch('http://localhost:5000/addSpots', {
+        fetch('https://tourism-management-project-server.vercel.app/addSpots', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -50,6 +51,9 @@ const AddSpotsPage = () => {
 
     return (
         <div className="flex flex-col items-center my-10">
+            <Helmet>
+                <title>ExloreXpert || Add Spots</title>
+            </Helmet>
             <h2 className="text-3xl dark:text-blue-400 font-bold my-5 text-blue-900">Add New Tourist Spot</h2>
 
             <div className="card border-2 shrink-0 w-full md:w-4/5 px-2 mx-2 md:mx-8 shadow-2xl border-orange-400 bg-base-100">

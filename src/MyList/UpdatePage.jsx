@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -20,7 +21,7 @@ const UpdatePage = () => {
         const cost = form.cost.value;
         const description = form.description.value;
         const updatedSpot = { photo, spotName, country, location, season, duration, visitors, cost, description }
-        fetch(`http://localhost:5000/updateSpot/${id}`, {
+        fetch(`https://tourism-management-project-server.vercel.app/updateSpot/${id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -42,11 +43,13 @@ const UpdatePage = () => {
             })
     }
 
-    
-    
+      
     return (
     <div>
         <div className="flex flex-col items-center my-10">
+        <Helmet>
+                <title>ExloreXpert || Update</title>
+            </Helmet>
             <h2 className="text-3xl dark:text-blue-400 font-bold my-5 text-blue-900">Update Information: <span className="text-orange-500">{singleSpot.spotName}</span></h2>
 
             <div className="card border-2 shrink-0 w-full md:w-4/5 px-2 mx-2 md:mx-8 shadow-2xl border-orange-400 bg-base-100">

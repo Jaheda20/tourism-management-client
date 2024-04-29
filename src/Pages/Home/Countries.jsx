@@ -9,7 +9,7 @@ const Countries = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/country')
+        fetch('https://tourism-management-project-server.vercel.app/country')
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -23,9 +23,9 @@ const Countries = () => {
 
     return (
         <div className="container mx-auto">
-            <h2 className="text-3xl font-bold dark:text-blue-400 text-blue-900 mb-5">Explore Europe</h2>
+            <h2 className="text-3xl font-bold dark:text-blue-400  text-blue-900 mb-5">Explore Europe</h2>
             
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mx-2">
                 {
                     displayCountry.map(country => <div key={country._id}>
                         <Link to={`/selectedSpots/${country.country}`}>

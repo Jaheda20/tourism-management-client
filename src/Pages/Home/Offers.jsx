@@ -1,13 +1,13 @@
 
 const Offers = () => {
     return (
-        <div className="container mx-28">
-            <div>
+        <div className="container mx-4 md:mx-28">
+            <div className="mb-2">
                 <h2 className="text-3xl font-bold dark:text-blue-400  text-blue-900 mb-2">Offers</h2>
                 <p className="mb-6">Promotions, deals, and special offers for you</p>
             </div>
             <div className="flex flex-col md:flex-row">
-                <div className="flex flex-row-reverse w-full md:w-1/2 border items-center justify-around rounded-xl p-3">
+                <div className="flex flex-row-reverse w-full md:w-1/2 border items-center justify-around rounded-xl p-3 gap-4">
                     <div>
                         <h1 className="text-xl text-blue-800 font-bold mb-2">Fly Away to your dream vacation</h1>
                         <p className="mb-4">Get inspired-compare and book flights with flexibility</p>
@@ -17,7 +17,7 @@ const Offers = () => {
                     <img src="https://i.ibb.co/nwCm6vG/plane.jpg" alt="" className="w-52" />
                 </div>
                 
-                <div className="md:ml-10 flex flex-row-reverse w-full md:w-1/2 border items-center justify-around rounded-xl p-3">
+                <div className="flex flex-row-reverse w-full md:w-1/2 border items-center justify-around rounded-xl p-3">
                     <div>
                         <h1 className="text-xl text-blue-800 font-bold mb-2">Planning for Olympic 2024?</h1>
                         <p className="mb-4">Book your flights early today</p>
