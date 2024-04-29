@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { JackInTheBox } from "react-awesome-reveal";
+import { Fade, JackInTheBox } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 
 
@@ -23,34 +23,35 @@ const Countries = () => {
     //         .then(data => {
     //             console.log(data)
     //     })
-        
+
     //     })
     // },[displayCountry])
 
-    const handleSpots = (country) =>{
+    const handleSpots = (country) => {
         fetch(`http://localhost:5000/spots/${country}`)
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-        })
-        
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+
     }
 
     return (
         <div className="container mx-auto">
-            <h2 className="text-3xl font-bold text-blue-900 mb-5">Explore Europe</h2>
-            <div key={displayCountry._id} onClick={()=>handleSpots(displayCountry.country)} className="grid grid-cols-5 gap-4">
+            <h2 className="text-3xl font-bold dark:text-blue-400 text-blue-900 mb-5">Explore Europe</h2>
+            <div key={displayCountry._id} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {
                     displayCountry.map(country => <div key={country._id}>
                         <div className="shadow-md border p-2 rounded-lg">
-                        <JackInTheBox>
-                            <img src={country.image} alt="" className="h-40" />
-                        </JackInTheBox>
-                            <div>
-                                <h1 className="font-bold text-blue-900">{country.country}</h1>
-                                <p className="text-xs"><i>{country.description}</i></p>
-                            </div>
-
+                            <JackInTheBox>
+                                <img src={country.image} alt="" className="h-40" />
+                            </JackInTheBox>
+                            <Fade>
+                                <div>
+                                    <h1 className="font-bold dark:text-blue-400 text-blue-900">{country.country}</h1>
+                                    <p className="text-xs"><i>{country.description}</i></p>
+                                </div>
+                            </Fade>
                         </div>
                     </div>)
                 }

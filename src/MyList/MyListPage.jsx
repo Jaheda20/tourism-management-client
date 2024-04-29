@@ -57,7 +57,7 @@ const MyListPage = () => {
 
     return (
         <div className="container mx-auto text-center flex flex-col items-center">
-            <h2 className="text-4xl text-blue-900 mt-20 mb-14">My Listed Tourist Spots</h2>
+            <h2 className="text-4xl dark:text-blue-400 text-blue-900 mt-20 mb-14">My Listed Tourist Spots</h2>
             <div className="overflow-x-auto mb-10 border border-orange-400 rounded-xl p-4 ">
                         <table className="table-auto">
                             

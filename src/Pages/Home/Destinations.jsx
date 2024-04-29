@@ -19,7 +19,7 @@ const Destinations = () => {
     return (
         <div className="mt-5 mb-10 container mx-auto">
             <div className="container mx-auto pt-14 flex flex-col items-start text-center gap-6 mb-5 ">
-                <h1 className="mt-8 font-bold text-4xl text-blue-900">Trending Destinations</h1>
+                <h1 className="mt-8 font-bold text-4xl dark:text-blue-400 text-blue-900">Trending Destinations</h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 mx-4 gap-4">
                 {
@@ -30,7 +30,7 @@ const Destinations = () => {
                                 <div className="bg-gray-300 w-full rounded-xl p-1 opacity-80">
                                     <h2 className="card-title text-black">{spot.spotName}</h2>
                                     <div className="flex">
-                                        <p>{spot.location}, {spot.country}</p>
+                                        <p className="text-black">{spot.location}, {spot.country}</p>
                                         
                                     </div>
 

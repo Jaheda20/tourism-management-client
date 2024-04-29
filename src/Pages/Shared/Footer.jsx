@@ -10,7 +10,7 @@ import { AiTwotoneMail } from "react-icons/ai";
 const Footer = () => {
     return (
         <div className="">
-            <footer className="footer p-4 md:p-10 bg-blue-100 text-base-content">
+            <footer className="footer p-4 md:p-10 bg-blue-100 dark:text-blue-800 text-base-content">
                 <div className="flex flex-col md:flex-row">
                     <div className="gap-2 flex flex-col mr-20">
                         <p className="text-3xl font-bold text-orange-500">Explore<span className="md:text-4xl text-blue-500">Xpert</span> </p>

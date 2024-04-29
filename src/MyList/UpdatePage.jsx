@@ -47,7 +47,7 @@ const UpdatePage = () => {
     return (
     <div>
         <div className="flex flex-col items-center my-10">
-            <h2 className="text-3xl font-bold my-5 text-blue-900">Update Information: <span className="text-orange-500">{singleSpot.spotName}</span></h2>
+            <h2 className="text-3xl dark:text-blue-400 font-bold my-5 text-blue-900">Update Information: <span className="text-orange-500">{singleSpot.spotName}</span></h2>
 
             <div className="card border-2 shrink-0 w-full md:w-4/5 px-2 mx-2 md:mx-8 shadow-2xl border-orange-400 bg-base-100">
                 <form onSubmit={handleUpdate} className="card-body">

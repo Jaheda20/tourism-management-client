@@ -11,7 +11,7 @@ const Discount = () => {
             </div>
             <Slide direction="right">
             <div className="flex flex-col">
-                <h1 className="text-blue-900 text-3xl font-bold mb-5">Get Instant Discounts</h1>
+                <h1 className="text-blue-900 dark:text-blue-400 text-3xl font-bold mb-5">Get Instant Discounts</h1>
                 <p>Simply sign into your Explorexpert.com account and look for the <i><b>Star</b></i> logo to save</p>
                 <div className="mt-10">
                 <Link to="/signin" className="mr-2 relative inline-flex items-center justify-center p-2 px-3 md:px-5 py-2 overflow-hidden text-xs md:text-base md:font-medium transition duration-400 ease-out rounded-3xl shadow-xl group hover:ring-1 hover:ring-orange-500">

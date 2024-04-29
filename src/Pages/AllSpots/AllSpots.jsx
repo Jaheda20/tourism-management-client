@@ -27,15 +27,11 @@ const AllSpots = () => {
     console.log(sorted)
     
 
-    
-    
-    
-
 
     return (
         <div className="container mx-auto">
             <div className="container mx-auto pt-14 flex flex-col items-center text-center gap-6 mb-5 ">
-                <h1 className="mt-8 font-bold text-4xl text-blue-900">Explore Europe: Unveiling Spectacular Destinations</h1>
+                <h1 className="mt-8 dark:text-blue-400 font-bold text-4xl text-blue-900">Explore Europe: Unveiling Spectacular Destinations</h1>
                 <p className="font-inter font-normal text-lg max-w-5xl ">Embark on a global journey through captivating destinations, from the majestic Tower of London steeped in history to the vibrant hues of Keukenhof's tulip fields. Discover cultural treasures at the British Museum and witness the northern lights in Kiruna, Sweden. Let each destination paint a unique story of beauty and wonder.</p>
             </div>
 
@@ -58,7 +54,7 @@ const AllSpots = () => {
                                     <img src={spot.photo} alt="" className="rounded-xl h-52" />
                                 </figure>
                                 <div className="card-body items-center text-center">
-                                    <h2 className="card-title text-blue-900 font-bold">{spot.spotName}</h2>
+                                    <h2 className="card-title dark:text-blue-400 text-blue-900 font-bold">{spot.spotName}</h2>
                                     <div className="flex gap-6">
                                         <p className="flex items-center gap-2"><FaCoins />
                                             {spot.cost}$</p>
