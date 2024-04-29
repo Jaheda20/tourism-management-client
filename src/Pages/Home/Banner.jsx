@@ -20,7 +20,7 @@ const Banner = () => {
 
                 <SwiperSlide className="slide">
                     <div className='slide slide1'>
-                        <h1 className="p-2 text-6xl bg-gray-300 opacity-80 text-blue-900 text-center font-bold ">Beyond Borders: 
+                        <h1 className="p-2 text-3xl md:text-6xl bg-gray-300 opacity-80 text-blue-900 text-center font-bold ">Beyond Borders: 
                         <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
@@ -28,21 +28,21 @@ const Banner = () => {
 
                 <SwiperSlide className="slide">
                     <div className='slide slide2'>
-                    <h1 className="p-2 text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
+                    <h1 className="p-2 text-3xl md:text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
                         <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide className="slide">
                     <div className='slide slide3'>
-                    <h1 className="p-2 text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
+                    <h1 className="p-2 text-3xl md:text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
                         <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>
 
                 <SwiperSlide className="slide">
                     <div className='slide slide4'>
-                    <h1 className="p-2 text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
+                    <h1 className="p-2 text-3xl md:text-6xl font-bold bg-gray-300 opacity-80 text-blue-900 text-center ">Beyond Borders: 
                         <br></br>Discover Unique Destinations with ExploreXpert</h1>
                     </div>
                 </SwiperSlide>

@@ -3,6 +3,7 @@ import Countries from "./Countries";
 import CustomerReview from "./CustomerReview";
 import Destinations from "./Destinations";
 import Discount from "./Discount";
+import Offers from "./Offers";
 import './slide.css';
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
             <div>
                 <Banner></Banner>
             </div>
+            <Offers></Offers>
             <Destinations></Destinations>
             <Countries></Countries>
             <Discount></Discount>
